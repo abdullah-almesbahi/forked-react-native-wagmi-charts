@@ -1,8 +1,11 @@
 import * as React from 'react';
 import { ViewProps } from 'react-native';
+import { Path } from 'react-native-redash';
 export declare const LineChartDimensionsContext: React.Context<{
     width: number;
     height: number;
+    pointWidth: number;
+    parsedPath: Path;
     path: string;
     area: string;
     shape: any;

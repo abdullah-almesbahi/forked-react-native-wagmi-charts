@@ -7,8 +7,13 @@ export declare type LineChartPriceTextProps = {
     precision?: number;
     variant?: 'formatted' | 'value';
     style?: Animated.AnimateProps<RNTextProps>['style'];
+    /**
+     * By default, it will use the current active index from the chart.
+     * If this is set it will use the index provided.
+     */
+    index?: number;
 };
-export declare function LineChartPriceText({ format, precision, variant, style, }: LineChartPriceTextProps): JSX.Element;
+export declare function LineChartPriceText({ format, precision, variant, style, index, }: LineChartPriceTextProps): JSX.Element;
 export declare namespace LineChartPriceText {
     var displayName: string;
 }

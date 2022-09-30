@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as React from 'react';
-import type { ViewProps } from 'react-native';
+import { Text, ViewProps } from 'react-native';
 import Animated, {
   useAnimatedStyle,
   useDerivedValue,
@@ -8,8 +9,7 @@ import Animated, {
 } from 'react-native-reanimated';
 
 import { LineChartDimensionsContext } from './Chart';
-import { CursorContext } from './Cursor';
-import { LineChartPriceText, LineChartPriceTextProps } from './PriceText';
+import { CursorContext } from './Cursor'
 import { useLineChart } from './useLineChart';
 import { getYForX } from 'react-native-redash';
 import { useMemo } from 'react';
@@ -20,8 +20,8 @@ export type LineChartTooltipProps = Animated.AnimateProps<ViewProps> & {
   yGutter?: number;
   cursorGutter?: number;
   position?: 'top' | 'bottom';
-  textProps?: LineChartPriceTextProps;
-  textStyle?: LineChartPriceTextProps['style'];
+  textProps?: any;
+  textStyle?: any;
   /**
    * When specified the tooltip is considered static, and will
    * always be rendered at the given index, unless there is interaction
@@ -149,9 +149,9 @@ export function LineChartTooltip({
         props.style,
       ]}
     >
-      {children || (
-        <LineChartPriceText index={at} style={[textStyle]} {...textProps} />
-      )}
+   
+        <Text>xxsadf</Text>
+     
     </Animated.View>
   );
 }

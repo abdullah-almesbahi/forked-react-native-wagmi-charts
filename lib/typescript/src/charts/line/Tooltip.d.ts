@@ -1,15 +1,14 @@
 import * as React from 'react';
-import type { ViewProps } from 'react-native';
+import { ViewProps } from 'react-native';
 import Animated from 'react-native-reanimated';
-import { LineChartPriceTextProps } from './PriceText';
 export declare type LineChartTooltipProps = Animated.AnimateProps<ViewProps> & {
     children?: React.ReactNode;
     xGutter?: number;
     yGutter?: number;
     cursorGutter?: number;
     position?: 'top' | 'bottom';
-    textProps?: LineChartPriceTextProps;
-    textStyle?: LineChartPriceTextProps['style'];
+    textProps?: any;
+    textStyle?: any;
     /**
      * When specified the tooltip is considered static, and will
      * always be rendered at the given index, unless there is interaction

@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { ViewProps } from 'react-native';
 import Animated from 'react-native-reanimated';
-export declare type LineChartTooltipProps = Animated.AnimateProps<ViewProps> & {
+export declare type LineChartTooltipProps = Animated.AnimateProps<any> & {
     children?: React.ReactNode;
     xGutter?: number;
     yGutter?: number;

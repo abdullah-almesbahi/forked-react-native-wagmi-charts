@@ -23,12 +23,18 @@ export function useLineChartPrice({
     return price.toFixed(precision).toString();
   });
   const formatted = useDerivedValue(() => {
-    let value = float.value || '';
+    let value = float?.value || '';
     const formattedPrice = value ? formatPrice({ value }) : '';
-    return format
-      ? format({ value, formatted: formattedPrice })
-      : formattedPrice;
+    if (
+      typeof format != 'undefined' &&
+      typeof format == 'function' &&
+      value != '' &&
+      formattedPrice != ''
+    ) {
+      return format({ value, formatted: formattedPrice });
+    } else {
+      return formattedPrice;
+    }
   });
-
   return { value: float, formatted };
 }

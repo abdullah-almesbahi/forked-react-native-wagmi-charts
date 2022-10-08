@@ -1,20 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import * as React from 'react';
-import { Text, ViewProps } from 'react-native';
 import Animated, {
   useAnimatedStyle,
   useDerivedValue,
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
-
+import { LineChartPriceText } from './PriceText';
 import { LineChartDimensionsContext } from './Chart';
-import { CursorContext } from './Cursor'
+import { CursorContext } from './Cursor';
 import { useLineChart } from './useLineChart';
 import { getYForX } from 'react-native-redash';
 import { useMemo } from 'react';
 
-export type LineChartTooltipProps = Animated.AnimateProps<ViewProps> & {
+export type LineChartTooltipProps = Animated.AnimateProps<any> & {
   children?: React.ReactNode;
   xGutter?: number;
   yGutter?: number;
@@ -149,9 +148,7 @@ export function LineChartTooltip({
         props.style,
       ]}
     >
-   
-        <Text>xxsadf</Text>
-     
+      {children || <LineChartPriceText style={[textStyle]} {...textProps} />}
     </Animated.View>
   );
 }
